@@ -36,6 +36,15 @@
   background-color: #e5e9f1;
   display: flex;
   justify-content: center;
+  & > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    & > input{
+      height: min-content;
+    }
+  }
 }
 
 .c-chart__container {
@@ -50,6 +59,11 @@
   min-width: 120px;
   padding: 0 16px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
   &-sm{
     height: 35px;
     min-width: auto;
