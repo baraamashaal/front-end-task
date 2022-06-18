@@ -17,6 +17,7 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.8.7",
     "angularjs-template-loader": "^0.1.2",
+    "babel-jest": "^28.1.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.6.0",

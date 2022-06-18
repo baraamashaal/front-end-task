@@ -1,6 +1,7 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
 import axios from 'axios';
+import getters from './getters';
 
 Vue.use(Vuex);
 export default new Vuex.Store({
@@ -9,25 +10,7 @@ export default new Vuex.Store({
     startDate: null,
     endDate: null,
   },
-  getters: {
-    chartData(state) {
-      // eslint-disable-next-line no-debugger
-      debugger;
-      return state.startDate || state.endDate ? state.chartData.filter(chartPointer => {
-        if (state.startDate && state.endDate) {
-          return chartPointer.date_ms > new Date(state.startDate) &&
-            chartPointer.date_ms <= new Date(state.endDate);
-        }
-        if (state.startDate) {
-          return chartPointer.date_ms > new Date(state.startDate);
-        }
-        if (state.endDate) {
-          return chartPointer.date_ms > new Date(state.endDate);
-        }
-        return chartPointer;
-      }) : state.chartData;
-    },
-  },
+  getters,
   mutations: {
     setChartData(state, chartData) {
       state.chartData = chartData;
