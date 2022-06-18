@@ -8,7 +8,14 @@ angular.module('appModule')
     $stateProvider
       .state({
         name: 'app',
-        url: '/',
+        url: '/?filter',
+        params: {
+          filter: {
+            value: '',
+            squash: true,
+          },
+        },
+        reloadOnSearch: false,
         templateUrl: './pages/home-page/home-page.html',
         controller: 'homeController',
         controllerAs: 'homePageVm',
