@@ -48,6 +48,24 @@ export default {
 
     chartOptions() {
       return {
+        visualMap: {
+          pieces: [
+            {
+              lte: 50,
+              color: '#f4674c'
+            },
+            {
+              lte: 80,
+              color: '#fbdb10'
+            },
+            {
+              lte: 100,
+              color: '#25984e'
+            }
+          ],
+          top: '15%',
+          right: 0
+        },
         title: {
           text: "Team Performance Index",
           left: "center",
@@ -57,7 +75,21 @@ export default {
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
-          padding: 0,
+          padding: 10,
+          formatter: (params, ticket, callback) => {
+            return (`
+              <span style="font-weight: bold">${params[0].axisValue}</span>
+              <br>
+              ${params[0].marker}
+              <span>${params[0].seriesName}</span>
+              <span>${params[0].value}%</span>
+            `)
+          },
+          backgroundColor: '#16253f',
+          textStyle: {
+            color: '#fff'
+          },
+          extraCssText: 'text-align: center'
         },
         grid: {
           left: "30px",
@@ -87,6 +119,7 @@ export default {
         },
         series: [
           {
+            name: 'Team Performance index',
             data: this.yAxisData,
             type: "line",
             symbol: "circle",
