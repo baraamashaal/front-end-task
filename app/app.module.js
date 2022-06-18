@@ -32,7 +32,7 @@ angular.module('appModule').directive('vSearchFilter', (createVueComponent) => {
 angular.module('appModule').filter('highlight', function ($sce) {
   return function (text, phrase) {
     if (phrase) {
-      text = text.replace(new RegExp('(' + phrase + ')', 'gi'), '<span class="c-users-list__highlight-text">$1</span>');
+      text = text.replace(new RegExp('(\\' + phrase + ')', 'gi'), '<span class="c-users-list__highlight-text">$1</span>');
     }
     return $sce.trustAsHtml(text);
   };
