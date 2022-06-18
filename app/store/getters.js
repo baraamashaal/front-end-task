@@ -9,7 +9,7 @@ export default {
         return chartPointer.date_ms > new Date(state.startDate);
       }
       if (state.endDate) {
-        return chartPointer.date_ms > new Date(state.endDate);
+        return chartPointer.date_ms <= new Date(state.endDate);
       }
       return chartPointer;
     }) : state.chartData;
