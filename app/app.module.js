@@ -2,6 +2,7 @@ import Vue from 'vue';
 import 'ngVue';
 import 'ngVue/build/plugins.js';
 import PerformancePageComponent from './pages/performance-page.vue';
+import NotFoundPageComponent from './pages/not-found-page.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
 import SearchFilterComponent from './components/vue-components/search-filter.vue';
 import Store from './store/store';
@@ -35,4 +36,8 @@ angular.module('appModule').filter('highlight', function ($sce) {
     }
     return $sce.trustAsHtml(text);
   };
+});
+
+angular.module('appModule').directive('vNotFoundPage', (createVueComponent) => {
+  return createVueComponent(Vue.component('notFoundPage', NotFoundPageComponent));
 });
