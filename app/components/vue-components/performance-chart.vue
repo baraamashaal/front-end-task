@@ -16,6 +16,7 @@ import {
   VisualMapComponent,
 } from "echarts/components";
 import VChart from "vue-echarts";
+import { mapGetters } from 'vuex'
 
 use([
   CanvasRenderer,
@@ -37,9 +38,7 @@ export default {
   },
 
   computed: {
-    chartData(){
-      return this.$store.state.chartData;
-    },
+    ...mapGetters(["chartData"]),
     initOptions() {
       return {
         width: "auto",
