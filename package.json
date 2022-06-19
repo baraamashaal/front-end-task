@@ -20,6 +20,7 @@
     "babel-jest": "^28.1.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "cypress": "^10.1.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
@@ -43,6 +44,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open --progress",
-    "build": "webpack"
+    "build": "webpack",
+    "testE2E": "node_modules/.bin/cypress open"
   }
 }
