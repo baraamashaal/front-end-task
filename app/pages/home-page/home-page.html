@@ -6,7 +6,7 @@
   <employees-list employees-list="homePageVm.employees" search-text="homePageVm.searchText"></employees-list>
 
   <div class="c-dashboard__footer">
-    <button ng-click="homePageVm.loadMore()" ng-if="!homePageVm.isLastPage" ng-disabled="homePageVm.isLoading" class="c-button">
+    <button id="load-more-employees" ng-click="homePageVm.loadMore()" ng-if="!homePageVm.isLastPage" ng-disabled="homePageVm.isLoading" class="c-button">
       Load More
       <div ng-if="homePageVm.isLoading" class="lds-dual-ring"></div>
     </button>
